@@ -1,5 +1,6 @@
 import fnmatch
 import os
+import shutil
 
 from fabric.api import local, task
 import tables as tb
@@ -49,6 +50,17 @@ def compute_experiment(data_file, force=False):
 def compute_all_experiments(top_dir='.', force=False):
     for data_file in find_filenames(top_dir, '*.yaml'):
         compute_experiment(data_file, force=force)
+
+
+@task
+def clean_all_analyses_reports(top_dir='.', force_analysis_type=''):
+    results_dirs = set(os.path.dirname(results_file) for results_file in find_filenames(top_dir, '*.hdf5'))
+    for results_dir in results_dirs:
+        for analysis_type in ANALYSES_TYPES:
+            reports_dir = os.path.join(results_dir, analysis_type)
+            if os.path.exists(reports_dir):
+                print "Deleting the '%s' analyses reports directory..." % reports_dir
+                shutil.rmtree(reports_dir)
 
 
 @task
