@@ -3,3 +3,4 @@ syntax: glob
 *.log
 *.hdf5
 *.pdf
+.vscode/
