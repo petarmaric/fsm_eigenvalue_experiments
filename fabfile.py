@@ -10,13 +10,17 @@ ANALYSES_TYPES = {
     'fsm_modal_analysis': {
         'program_args_fmt': "%(results_file)s --report_file %(report_file)s",
         'report_file_ext': 'pdf',
-        'variations': [
-            {},
-            {'a-max': 1000.0,},
-            {'a-max': 1500.0,},
-            {'t_b-min': 4.0, 't_b-max': 8.0,},
-            {'t_b-min': 4.0, 't_b-max': 8.0, 'a-min': 2000.0,},
-        ],
+        'variations': {
+            '*/*.hdf5': [
+                {},
+            ],
+            'barbero/*.hdf5': [
+                {'a-max': 1000.0,},
+                {'a-max': 1500.0,},
+                {'t_b-min': 4.0, 't_b-max': 8.0,},
+                {'t_b-min': 4.0, 't_b-max': 8.0, 'a-min': 2000.0,},
+            ],
+        },
     },
 }
 
@@ -72,19 +76,23 @@ def run_single_analysis_type(results_file, analysis_type):
         os.mkdir(reports_dir)
 
     analysis_settings = ANALYSES_TYPES[analysis_type]
-    for variation_dict in analysis_settings['variations']:
-        sorted_variation_items = sorted(variation_dict.items())
+    for path_pattern, variation_group in analysis_settings['variations'].items():
+        if not fnmatch.fnmatch(results_file, '*/' + path_pattern):
+            continue
 
-        variation_filename_part = ','.join("%s=%s" % (k, v) for k, v in sorted_variation_items)
-        report_file = "%s%s.%s" % (
-            reports_base_name,
-            '@' + variation_filename_part if variation_filename_part else '',
-            analysis_settings['report_file_ext']
-        )
+        for variation_dict in variation_group:
+            sorted_variation_items = sorted(variation_dict.items())
 
-        program_args = analysis_settings['program_args_fmt'] % locals()
-        variation_program_args = ' '.join("--%s=%s" % (k, v) for k, v in sorted_variation_items)
-        local("%s %s %s" % (analysis_type, program_args, variation_program_args))
+            variation_filename_part = ','.join("%s=%s" % (k, v) for k, v in sorted_variation_items)
+            report_file = "%s%s.%s" % (
+                reports_base_name,
+                '@' + variation_filename_part if variation_filename_part else '',
+                analysis_settings['report_file_ext']
+            )
+
+            program_args = analysis_settings['program_args_fmt'] % locals()
+            variation_program_args = ' '.join("--%s=%s" % (k, v) for k, v in sorted_variation_items)
+            local("%s %s %s" % (analysis_type, program_args, variation_program_args))
 
 @task
 def run_analyses(results_file, force_analysis_type=''):
