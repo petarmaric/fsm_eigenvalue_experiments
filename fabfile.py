@@ -23,6 +23,15 @@ ANALYSES_TYPES = {
             ],
         },
     },
+    'fsm_strip_length_analysis': {
+        'program_args_fmt': "%(results_file)s --report_file %(report_file)s",
+        'report_file_ext': 'pdf',
+        'variations': {
+            'barbero/*.hdf5': [
+                {'t_b': 6.35, 'add-automatic-markers': '',},
+            ],
+        },
+    },
 }
 
 
@@ -92,7 +101,7 @@ def run_single_analysis_type(results_file, analysis_type):
             )
 
             program_args = analysis_settings['program_args_fmt'] % locals()
-            variation_program_args = ' '.join("--%s=%s" % (k, v) for k, v in sorted_variation_items)
+            variation_program_args = ' '.join("--%s %s" % (k, v) for k, v in sorted_variation_items)
             local("%s %s %s" % (analysis_type, program_args, variation_program_args))
 
 @task

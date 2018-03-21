@@ -1,4 +1,5 @@
 Fabric~=1.13
 fsm_eigenvalue~=1.0
 fsm_modal_analysis~=1.0
+fsm_strip_length_analysis~=1.0
 tables~=3.2
