@@ -19,6 +19,7 @@ ANALYSES_TYPES = {
                 {'a-max': 1500.0,},
                 {'t_b-min': 4.0, 't_b-max': 8.0,},
                 {'t_b-min': 4.0, 't_b-max': 8.0, 'a-min': 2000.0,},
+                {'t_b-min': 4.0, 't_b-max': 7.0, 'a-min': 200.0, 'a-max': 800.0,},
             ],
         },
     },
