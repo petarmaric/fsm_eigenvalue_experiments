@@ -28,6 +28,7 @@ ANALYSES_TYPES = {
         'report_file_ext': 'pdf',
         'variations': {
             'barbero/*.hdf5': [
+                {'t_b': 6.35, 'markers': 2310.00,},
                 {'t_b': 6.35, 'add-automatic-markers': '',},
                 {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 195.00, 'a-max': 198.00,}, # mode 2 to 3
                 {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 276.00, 'a-max': 280.00,}, # mode 3 to 4
