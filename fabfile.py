@@ -29,6 +29,19 @@ ANALYSES_TYPES = {
         'variations': {
             'barbero/*.hdf5': [
                 {'t_b': 6.35, 'add-automatic-markers': '',},
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 195.00, 'a-max': 198.00,}, # mode 2 to 3
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 276.00, 'a-max': 280.00,}, # mode 3 to 4
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 356.00, 'a-max': 362.00,}, # mode 4 to 5
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 436.00, 'a-max': 443.00,}, # mode 5 to 6
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 516.00, 'a-max': 524.00,}, # mode 6 to 7
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 596.00, 'a-max': 605.00,}, # mode 7 to 8
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 676.00, 'a-max': 685.00,}, # mode 8 to 9
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 756.00, 'a-max': 766.00,}, # mode 9 to 10
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 835.00, 'a-max': 847.00,}, # mode 10 to 11
+                {'t_b': 6.35, 'add-automatic-markers': '', 'a-min': 900.00, 'a-max': 970.00,}, # mode 11 to 1
+            ],
+            'barbero_mode-transitions/*.hdf5': [
+                {'t_b': 6.35, 'add-automatic-markers': '',},
             ],
         },
     },
