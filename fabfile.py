@@ -53,6 +53,30 @@ ANALYSES_TYPES = {
             'barbero/*.hdf5': [
                 {'a': 2310, 'add-automatic-markers': '',},
             ],
+            'barbero/barbero-elastic.hdf5': [
+                {'a': 198.0, 'add-automatic-markers': '',}, # mode  2 to  3, as per 'barbero' elastic model
+                {'a': 279.5, 'add-automatic-markers': '',}, # mode  3 to  4, as per 'barbero' elastic model
+                {'a': 361.0, 'add-automatic-markers': '',}, # mode  4 to  5, as per 'barbero' elastic model
+                {'a': 442.0, 'add-automatic-markers': '',}, # mode  5 to  6, as per 'barbero' elastic model
+                {'a': 523.0, 'add-automatic-markers': '',}, # mode  6 to  7, as per 'barbero' elastic model
+                {'a': 603.5, 'add-automatic-markers': '',}, # mode  7 to  8, as per 'barbero' elastic model
+                {'a': 684.5, 'add-automatic-markers': '',}, # mode  8 to  9, as per 'barbero' elastic model
+                {'a': 765.0, 'add-automatic-markers': '',}, # mode  9 to 10, as per 'barbero' elastic model
+                {'a': 846.0, 'add-automatic-markers': '',}, # mode 10 to 11, as per 'barbero' elastic model
+                {'a': 968.5, 'add-automatic-markers': '',}, # mode 11 to  1, as per 'barbero' elastic model
+            ],
+            'barbero/barbero-viscoelastic.hdf5': [
+                {'a': 196.0, 'add-automatic-markers': '',}, # mode  2 to  3, as per 'barbero' viscoelastic model
+                {'a': 276.5, 'add-automatic-markers': '',}, # mode  3 to  4, as per 'barbero' viscoelastic model
+                {'a': 357.0, 'add-automatic-markers': '',}, # mode  4 to  5, as per 'barbero' viscoelastic model
+                {'a': 437.5, 'add-automatic-markers': '',}, # mode  5 to  6, as per 'barbero' viscoelastic model
+                {'a': 517.5, 'add-automatic-markers': '',}, # mode  6 to  7, as per 'barbero' viscoelastic model
+                {'a': 597.5, 'add-automatic-markers': '',}, # mode  7 to  8, as per 'barbero' viscoelastic model
+                {'a': 677.5, 'add-automatic-markers': '',}, # mode  8 to  9, as per 'barbero' viscoelastic model
+                {'a': 757.0, 'add-automatic-markers': '',}, # mode  9 to 10, as per 'barbero' viscoelastic model
+                {'a': 837.0, 'add-automatic-markers': '',}, # mode 10 to 11, as per 'barbero' viscoelastic model
+                {'a': 903.0, 'add-automatic-markers': '',}, # mode 11 to  1, as per 'barbero' viscoelastic model
+            ],
         },
     },
 }
