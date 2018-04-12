@@ -88,6 +88,15 @@ ANALYSES_TYPES = {
             ],
         },
     },
+    'fsm_strip_thickness_damage_analysis': {
+        'program_args_fmt': "%(results_file)s --report_file %(report_file)s",
+        'report_file_ext': 'pdf',
+        'variations': {
+            'barbero/*.hdf5': [
+                {'a': 2310, 'add-automatic-markers': '',},
+            ],
+        },
+    },
 }
 
 

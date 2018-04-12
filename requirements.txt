@@ -4,4 +4,5 @@ fsm_damage_analysis~=1.0
 fsm_modal_analysis~=1.0
 fsm_strip_length_analysis~=1.0
 fsm_strip_thickness_analysis~=1.0
+fsm_strip_thickness_damage_analysis~=1.0
 tables~=3.2
