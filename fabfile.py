@@ -3,6 +3,7 @@ import os
 import shutil
 
 from fabric.api import local, task
+from fsm_eigenvalue.load import linspace_with_step
 import tables as tb
 
 
@@ -94,6 +95,14 @@ ANALYSES_TYPES = {
         'variations': {
             'barbero/*.hdf5': [
                 {'a': 2310, 'add-automatic-markers': '',},
+            ],
+            'barbero_mode-transitions/barbero-viscoelastic_mode-2-to-3.hdf5': [
+                {'a': a, 'add-automatic-markers': '',}
+                for a in linspace_with_step(195.0, 198.0, 0.5)
+            ],
+            'barbero_mode-transitions/barbero-viscoelastic_mode-10-to-11.hdf5': [
+                {'a': a, 'add-automatic-markers': '',}
+                for a in linspace_with_step(835.0, 846.0, 0.5)
             ],
         },
     },
